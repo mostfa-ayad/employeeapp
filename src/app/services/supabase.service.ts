@@ -31,6 +31,17 @@ private supabase:SupabaseClient;
       } );
    
   }
+  async updateEmployee(employee: Employee) {
+    return await this.supabase
+      .from('employee')
+      .update(employee)
+      .eq('employee_id', employee.employee_id).then(({ data, error }) => {
+        if (error) {
+          throw error;
+        }
+        return data;
+      });
+  }
   getEmployees() {
     return  this.supabase
       .from('employee')

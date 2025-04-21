@@ -35,9 +35,16 @@ ngOnInit() {
 createEmployee() {
 this.service.createEmployee(this.employeeObj).then(() => {
  alert('Employee created successfully!');
-}).catch((error) => {
+}). catch((error) => {
  alert('Error creating employee: ' + error.message);
 });
 
 }
+updateEmployee() {
+  this.service.updateEmployee(this.employeeObj).then(() => {
+    alert('Employee updated successfully!');
+  }).catch  ((error) => {
+    alert('Error updating employee: ' + error.message);
+  } );
+  }
 }
