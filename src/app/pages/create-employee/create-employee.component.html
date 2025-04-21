@@ -1,0 +1,86 @@
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h2>
+                @if(isEditeMode){ Edit Employee : {{ employeeObj.employee_id }} } 
+                 @else   {Create Employee}
+                
+                </h2>
+        </div>
+        <div class="card-body">
+            <div class="form">
+                <div class="row ">
+                    <div class="col-md-6">
+                       <label for="">Name</label>
+                    <input type="text" [(ngModel)]="employeeObj.full_name" class="form-control"  placeholder="Enter Name"  required>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-3">
+                       <label for="">Email</label>
+                    <input type="text" class="form-control" [(ngModel)]="employeeObj.email" placeholder="Enter Email"  required>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="">Phone</label>
+                     <input type="text" class="form-control" [(ngModel)]="employeeObj.phone" placeholder="Enter Phone"  required>
+                     </div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-3">
+                      <div class="row">
+                        <label >Gender</label>
+                        <div  class="col">
+                            <input type="radio" id="male" [(ngModel)]="employeeObj.gender" name="gender" value="male">
+                            <label for="male">Male</label>
+                        </div>
+                        <div  class="col">
+                            <input type="radio" [(ngModel)]="employeeObj.gender" id="female" name="gender" value="female">
+                            <label for="female">Female</label>
+                        </div>
+                    </div>
+    
+                </div>
+                    <div class="col-md-3">
+                        <label for="">Date</label>
+                     <input type="date" class="form-control" [(ngModel)]="employeeObj.date_of_joining" placeholder="Enter Date"  required>
+                     </div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-3">
+                        <label for="">Department</label>
+                     <select class="form-control" >
+                        <option value=""></option>
+                     </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="">Designation</label>
+                        <select class="form-control" >
+                           <option value=""></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-3">  <label for="">Employee Type</label>
+                        <select class="form-control" [(ngModel)]="employeeObj.employee_type" placeholder="Enter Employee Type"  required>
+                            <option value="">select</option>
+                            <option value="contract">Contract</option>
+                            <option value="parttime">Parttime</option>
+                         </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="">Salary</label>
+                     <input type="text" class="form-control" [(ngModel)]="employeeObj.salary" placeholder="Enter Salary"  required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 text-center">
+                        <button class="btn btn-secondary mt-3 ">reset</button>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <button class="btn btn-success mt-3" (click)="createEmployee()">Save Employee</button>
+                    </div>
+                </div>
+            </div>
+          </div>
+    </div>
+</div>

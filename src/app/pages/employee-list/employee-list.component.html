@@ -1,0 +1,49 @@
+
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h2>Employee List</h2>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Gender</th>
+                            <th>Date of Joining</th>
+                            <th>Employee Type</th>
+                            <th>Salary</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                      @for(employee of employees() ; track employee.employee_id){
+                        <tr>
+                            <td>{{ employee.employee_id }}</td>
+                            <td>{{ employee.full_name }}</td>
+                            <td>{{ employee.email }}</td>
+                            <td>{{ employee.phone }}</td>
+                            <td>{{ employee.gender }}</td>
+                            <td>{{ employee.date_of_joining }}</td>
+                            <td>{{ employee.employee_type }}</td>
+                            <td>{{ employee.salary }}</td>
+                          <td>
+                            <button class="btn btn-danger" (click)="deleteEmployee(employee.employee_id)">Delete</button>
+                            <button class="btn btn-primary"  (click)="editEmployee(employee.employee_id)">Edit</button>
+                        </td>   
+
+                    </tr>
+
+                      }
+                           
+                    </tbody>                    
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
